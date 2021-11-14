@@ -44,15 +44,23 @@ describe('add.js', function() {
             expect(add(firstNumber,secondNumber)).to.equal(firstNumber+secondNumber);
         }
     });
+    /*  NOTE: I made incorrect assumption that add-function had default-value of 0
+        and that numbers over Number.MAX_VALUE would be undefined so result would be 0.
+        Changed 0 to Infinity
+    */
     it('ADD-5 Test too big result', function() {
         let firstNumber = Number.MAX_VALUE-1;
         let secondNumber = Number.MAX_VALUE-1;
-        expect(add(firstNumber,secondNumber)).to.equal(0);
+        expect(add(firstNumber,secondNumber)).to.equal(Infinity);
     });
+    /*  NOTE: I made incorrect assumption that add-function had default-value of 0
+        and that numbers under -Number.MAX_VALUE would be undefined so result would be 0.
+        Changed 0 to -Infinity
+    */
     // NOTE: Changed Number.MIN_VALUE to -Number.MAX_VALUE
     it('ADD-6 Test too small result', function() {
         let firstNumber = -Number.MAX_VALUE+1;
         let secondNumber = -Number.MAX_VALUE+1;
-        expect(add(firstNumber,secondNumber)).to.equal(0);
+        expect(add(firstNumber,secondNumber)).to.equal(-Infinity);
     });
 });
