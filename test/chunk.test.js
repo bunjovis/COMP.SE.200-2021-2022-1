@@ -6,12 +6,12 @@ describe('chunk.js', function() {
     it('CHUNK-1 Test chunk with no size parameter', function() {
         const array = ['a','b','c'];
         const chunked = chunk(array);
-        expect(chunked).to.equal([['a'],['b'],['c']]);
+        expect(chunked).to.deep.equal([['a'],['b'],['c']]);
     });
     it('CHUNK-2 Test chunk with positive size parameter', function() {
         const array = ['a','b','c'];
         const chunked = chunk(array,2);
-        expect(chunked).to.equal([['a','b'],['c']]);
+        expect(chunked).to.deep.equal([['a','b'],['c']]);
     });
     it('CHUNK-3 Test chunk with illegal size parameter', function() {
         const array = ['a','b','c'];
@@ -53,6 +53,6 @@ describe('chunk.js', function() {
     it('CHUNK-7 Test chunk with array of arrays', function() {
         const array = [['a','b'],['c','d']];
         const chunked = chunk(array);
-        expect(chunked).to.equal([[['a','b']],[['c','d']]]);
+        expect(chunked).to.deep.equal([[['a','b']],[['c','d']]]);
     });
 });
