@@ -27,19 +27,13 @@ describe('countBy.js', function() {
     });
     // NOTE: changed expected results
     it('COUNTBY-3 Test countBy with illegal iteratee parameter', function() {
-        let counts = countBy(foodReviews, value => null);
-        expect(counts).to.deep.equal({ 'null': 3});
-        counts = countBy(foodReviews, value => undefined);
-        expect(counts).to.deep.equal({ 'undefined': 3});
-        counts = countBy(foodReviews, value => 'testi');
-        expect(counts).to.deep.equal({ 'testi': 3});
-        counts = countBy(foodReviews, value => ['testi']);
-        expect(counts).to.deep.equal({ 'testi': 3});
+        expect(() => countBy(foodReviews, null)).to.throw(TypeError);
+        expect(() => countBy(foodReviews, undefined)).to.throw(TypeError);
+        expect(() => countBy(foodReviews, 'testi')).to.throw(TypeError);
+        expect(() => countBy(foodReviews, ['testi'])).to.throw(TypeError);
         const testiObject = { 'name': 'testi' };
-        counts = countBy(foodReviews, value => testiObject);
-        expect(counts).to.deep.equal({ '[object Object]': 3});
-        counts = countBy(foodReviews, value => 1);
-        expect(counts).to.deep.equal({ '1': 3});
+        expect(() => countBy(foodReviews, testiObject)).to.throw(TypeError);
+        expect(() => countBy(foodReviews, 1)).to.throw(TypeError);
     });
     // NOTE: changed expected results for strings: they actually are a collection of characters
     it('COUNTBY-4 Test countBy with illegal collection parameter', function() {
