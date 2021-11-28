@@ -30,7 +30,7 @@ describe("slice.js", () => {
         const testArray = [2, 4, 6, 8];
         expect(slice(testArray)).to.deep.equal([2,4,6,8]);
     });
-    //Note: SLICE-8 SLICE-9 SLICE-10 SLICE-11 new test cases added to cover full branch coverage for slice
+    //Note: SLICE-8 SLICE-9 SLICE-10 SLICE-11 SLICE-12 SLICE-13 new test cases added to cover full branch coverage for slice
     it("SLICE-8 that slice function works property with empty array and no start and end index", () => {
         const testArray = [];
         expect(slice(testArray)).to.deep.equal([]);
