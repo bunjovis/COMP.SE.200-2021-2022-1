@@ -46,5 +46,13 @@ describe("slice.js", () => {
         const testArray = [2, 4, 6, 8];
         expect(slice(testArray, 5, 4)).to.deep.equal([]);
     });
+    it("SLICE-12 test slice function with an array of numbers and positive start index with positive end index and end index is greater than array length", () => {
+        const testArray = [2, 4, 6, 8];
+        expect(slice(testArray, 3, 6)).to.deep.equal([8]);
+    });
+    it("SLICE-13 test slice function with an array of numbers and positive start index with positive end index and both start and end index is greater than array length", () => {
+        const testArray = [2, 4, 6, 8];
+        expect(slice(testArray, 5, 7)).to.deep.equal([]);
+    });
     
 });
