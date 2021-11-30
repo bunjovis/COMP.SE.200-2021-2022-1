@@ -1,13 +1,14 @@
-# Student template
+# COMP.SE.200-2021-2022-1 Software Testing assignment
 
-## Purpose of this repository
+This repository contains our delivery for the Software Testing course assignment. 
 
-This is a project template for students participating in Software Testing course
-at Tampere University.
+## Execution instructions
+* The tests are run locally. The repository needs to cloned from the following link: https://github.com/bunjovis/COMP.SE.200-2021-2022-1
+* After that, the following command needs to be executed first to install the dependencies. “npm install” (Dependencies for the tests are: c8, mocha, chai, mochawesome, mochawesome-report-generator).
+* Then to run the tests the following command needs to be executed “npm run test”. 
+* The generated test report with mochawesome and mochawesome-report-generator can be found in mochawesome-report/mochawesome.html file. 
+* The test coverage index file where coverage for all files are listed, can be found in coverage/index.html file. 
+* The detailed test coverage from each file in src/ directory can be found from coverage/*.html file.
 
-The repository only contains the source code that is under testing, `package.json` skeleton
-and LICENSE file.
+Note: If Node.js is not previously installed in the local machine. Node.js needs to be installed first (https://nodejs.org/en/download/). Tested with version 14.18.1 of Node.js.
 
-Source code folder contains a separate license file that must **NOT** be removed under any circumstances!
-Removing this license file directly violates terms and conditions of the software under testing.
-Individuals who remove or modify the license file will also carry the consequences.
